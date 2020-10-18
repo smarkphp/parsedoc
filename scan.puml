@@ -1,0 +1,58 @@
+@startgantt
+
+saturday are closed
+sunday are closed
+
+[安全测试范围及可行性分析] lasts 3 days
+[安全测试框架核心代码设计] lasts 3 days
+
+[扫描用例awvs主流程梳理] lasts 2 days
+[扫描用例awvs主流程梳理] starts at [安全测试框架核心代码设计]'s end
+[扫描用例awvs代码实现] lasts 3 days
+[扫描用例awvs代码实现] starts at [扫描用例awvs主流程梳理]'s end
+
+[命令行用例case17/18流程规则梳理] lasts 2 days
+[命令行用例case17/18流程规则梳理] starts at [扫描用例awvs代码实现]'s end
+[命令行用例case17/18代码实现] lasts 3 days
+[命令行用例case17/18代码实现] starts at [命令行用例case17/18流程规则梳理]'s end
+
+[GUI用例case19流程规则梳理] lasts 1 days
+[GUI用例case19流程规则梳理] starts at [命令行用例case17/18代码实现]'s end
+[GUI用例case19代码实现] lasts 2 days
+[GUI用例case19代码实现] starts at [GUI用例case19流程规则梳理]'s end
+
+[业务规则case**流程规则梳理] lasts 1 days
+[业务规则case**流程规则梳理] starts at [GUI用例case19代码实现]'s end
+[业务规则case**流程规则代码实现] lasts 2 days
+[业务规则case**流程规则代码实现] starts at [业务规则case**流程规则梳理]'s end
+
+[支付件case1流程规则梳理] lasts 1 days
+[支付件case1流程规则梳理] starts at [业务规则case**流程规则代码实现]'s end
+[支付件case1代码实现] lasts 2 days
+[支付件case1代码实现] starts at [支付件case1流程规则梳理]'s end
+
+[代码检查case2流程梳理] lasts 1 days
+[代码检查case2流程梳理] starts at [支付件case1代码实现]'s end
+[代码检查case2代码实现] lasts 2 days
+[代码检查case2代码实现] starts at [代码检查case2流程梳理]'s end
+
+'[安全测试用例书写执行之命令行工具] lasts 3 days
+'[安全测试用例书写执行之命令行工具] starts at [安全测试用例书写执行之接口]'s end
+'
+'
+'[安全用例书写之业务规则] lasts 3 days
+'[安全用例书写之业务规则] starts at [安全测试用例书写执行之命令行工具]'s end
+
+@endgantt
+
+## 风险
++ 物料的准备(case2 说延后-《华为流程上已经管控》)
+
+## 月份
+### 9月
+9-27， 10-10
+
+### 10月
+11、12、13、14、15
+19、20、21、22、23
+
