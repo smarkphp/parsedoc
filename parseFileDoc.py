@@ -5,7 +5,7 @@ company: zy
 Author: Mark
 Date: 2020-10-02 10:12:29
 ListenEditors: Mark
-LastEditTime: 2020-10-07 18:08:07
+LastEditTime: 2020-11-15 17:42:17
 '''
 
 from docx import Document
@@ -182,6 +182,39 @@ class parse:
         dictV[keyword]=lrv
         return dictV
         
+    """把 Doc表格中的数据、形成json形式的数据"""
+    @staticmethod
+    def report_res(file,keyword):
+
+    document = Document(file)
+    lrv = []
+    #  step1: 读取文档中的所有段落的列表-{表格}
+    tables = document.tables
+    for table in tables:
+        lrvi = []
+        for row in table.rows:
+            for cell in row.cells:
+                lrvi.append(cell.text)
+        lrv.append(lrvi)
+    # print("lrv:", lrv)
+
+    # step2: 数据转换
+    lrv2 = []
+    for lrvie in lrv:
+        dictvie = {}
+        for index, item in enumerate(lrvie):
+            if index % 2 == 0:
+                dictvie[item] = lrvie[index + 1]  #  偶数位置作为词典索引、奇数数位置作为索引值：
+        lrv2.append(dictvie)
+    # print(lrv2)
+
+    # step3:  目标数据获取比较
+    res = True
+    for kv in lrv2:
+        keywordValue = kv[keyword].strip()
+        if keywordValue != 'OK':
+            res = False
+    return res
 
 if __name__ == "__main__":
     #    parse.sum(5,6)
